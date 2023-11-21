@@ -2,16 +2,6 @@
 
 Application example built with [Angular](https://angular.io/) 15 with authentication using the [Amazon Cognito](https://aws.amazon.com/cognito/) service.
 
-This tutorial was posted on my [blog](https://rodrigo.kamada.com.br/blog/autenticacao-usando-o-amazon-cognito-em-uma-aplicacao-angular) in portuguese and on the [DEV Community](https://dev.to/rodrigokamada/authentication-using-the-amazon-cognito-to-an-angular-application-ilh) in english.
-
-
-[![Website](https://shields.braskam.com/v1/shields?name=website&format=rectangle&size=small&radius=5)](https://rodrigo.kamada.com.br)
-[![LinkedIn](https://shields.braskam.com/v1/shields?name=linkedin&format=rectangle&size=small&radius=5)](https://www.linkedin.com/in/rodrigokamada)
-[![Twitter](https://shields.braskam.com/v1/shields?name=twitter&format=rectangle&size=small&radius=5&socialAccount=rodrigokamada)](https://twitter.com/rodrigokamada)
-[![Instagram](https://shields.braskam.com/v1/shields?name=instagram&format=rectangle&size=small&radius=5)](https://www.instagram.com/rodrigokamada)
-
-
-
 ## Prerequisites
 
 
@@ -814,7 +804,7 @@ Build at: 2022-01-18T16:33:13.971Z - Hash: ce7a03498c95d4f5 - Time: 25230ms
 **1.** Clone the repository.
 
 ```powershell
-git clone git@github.com:rodrigokamada/angular-amazon-cognito.git
+git clone https://github.com/ehtiramabdullayev/angular-amazon-cognito.git
 ```
 
 **2.** Install the dependencies.
