@@ -205,12 +205,18 @@ import Amplify, { Auth } from 'aws-amplify';
 
 import { environment } from '../environments/environment';
 
+// >>New - Configuring Auth Module
+// Amplify.configure(environment.cognito);
+Auth.configure(environment.cognito);
+
+
 export interface IUser {
   email: string;
   password: string;
   showPassword: boolean;
   code: string;
   name: string;
+  'custom:company'?: string;
 }
 
 @Injectable({
@@ -277,11 +283,14 @@ export class CognitoService {
   public updateUser(user: IUser): Promise<any> {
     return Auth.currentUserPoolUser()
     .then((cognitoUser: any) => {
+      // user['custom:company'] = user.company; // Replace 'company123' with the actual company value
+
       return Auth.updateUserAttributes(cognitoUser, user);
     });
   }
 
 }
+
 ```
 
 **8.** Create the `SignUpComponent` component.
@@ -554,6 +563,12 @@ export class ProfileComponent implements OnInit {
       </div>
     </div>
     <div class="row">
+      <div class="col mb-2">
+        <label for="name" class="form-label">Company:</label>
+        <input type="text" id="company" name="company" #name="ngModel" [(ngModel)]="user['custom:company']" class="form-control form-control-sm">
+      </div>
+    </div>
+    <div class="row">
       <div class="col d-grid">
         <button type="button" (click)="update()" class="btn btn-sm btn-dark" [disabled]="loading">
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
@@ -563,6 +578,8 @@ export class ProfileComponent implements OnInit {
     </div>
   </div>
 </div>
+
+
 ```
 
 **17.** Change the `src/app/app.component.ts` file. Import the `Router` and `CognitoService` services and create the `isAuthenticated` and `signOut` methods as below.
